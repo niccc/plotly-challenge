@@ -13,10 +13,12 @@ d3.json("samples.json").then(data =>{
     menu = d3.select("#selDataset");
 })
 
+//intitial values for charts
 sample_values = samples[0].sample_values.slice(0,10).reverse();
 otu_ids = samples[0].otu_ids.slice(0,10).reverse();
 otu_labels = samples[0].otu_labels.slice(0,10).reverse();
 
+//function to create charts
  function createCharts(){
    
     //bar chart
@@ -68,6 +70,7 @@ otu_labels = samples[0].otu_labels.slice(0,10).reverse();
 
  } 
  
+ //create initial charts
  createCharts();
 
 //populate the dropdown menu
@@ -78,7 +81,7 @@ function makeMenu(name){
 names.foreach(makeMenu);
 document.getElementById("selDataset").innerHTML = menuHtml;
 
-//respond to user input
+//rmake new graphs based on user input
 function newGraphs(){
 
     d3.event.preventDefault();
